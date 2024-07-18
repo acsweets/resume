@@ -18,6 +18,9 @@ class _ResumePageState extends State<ResumePage> {
       appBar: AppBar(
         title: Text("尝试一下，在一次"),
       ),
+      body: Center(
+        child: Text("开始"),
+      ),
     );
   }
 }

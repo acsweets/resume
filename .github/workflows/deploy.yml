@@ -1,5 +1,5 @@
 name: Deploy to GitHub Pages
-
+#推送到主分支的时候触发工作流
 on:
   push:
     branches: [ main ]  # 根据你的主分支名称调整
@@ -7,16 +7,19 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    #检出代码
     steps:
       - uses: actions/checkout@v2
       - uses: subosito/flutter-action@v1
         with:
           channel: 'stable'
+      - run: flutter clean
       - run: flutter pub get
       - run: flutter build web --base-href "/resume/"
-
+# 将构建的文件部署到 GitHub Pages。
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build/web
+          #publish_branch: info-pages
