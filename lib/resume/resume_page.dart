@@ -16,7 +16,7 @@ class _ResumePageState extends State<ResumePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(""),
+        title: Text("尝试一下"),
       ),
     );
   }
