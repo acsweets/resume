@@ -11,6 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: subosito/flutter-action@v1
+        # 使用 subosito/flutter-action@v1 Action 设置 Flutter 环境，并指定使用 stable 通道
         with:
           channel: 'stable'
       - run: flutter clean
@@ -21,5 +22,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          # 构建后的文件目录，例如静态网站的输出目录
           publish_dir: ./build/web
           #publish_branch: info-pages

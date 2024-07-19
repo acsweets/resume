@@ -1,0 +1,69 @@
+{
+  "info": {
+    "name": "刘晓草",
+    "age": 26,
+    "email": "jurelxc@163.com",
+    "phoneNumber": "18656419889",
+    "degree": "本科",
+    "expect": "Flutter 开发"
+  },
+  "education": [
+    {
+      "name": "",
+      "startDate": "",
+      "endDate": "",
+      "location": "",
+      "discipline": "网络工程",
+      "course": []
+    },
+    {
+      "name": "",
+      "startDate": "",
+      "endDate": "",
+      "location": "",
+      "discipline": "软件工程",
+      "course": []
+    }
+  ],
+  "experience": [
+    {
+      "name": "",
+      "startDate": "",
+      "endDate": "",
+      "responsibilities": [
+        "职责",
+        ""
+      ],
+      "post": "Flutter 核心开发"
+    },
+    {}
+  ],
+  "project": [
+    {
+      "name": "",
+      "startDate": "",
+      "endDate": "",
+      "description": "",
+      "technical":["sqlite","GetX"],
+      "location": ""
+    },
+    {
+      "name": "",
+      "startDate": "",
+      "endDate": "",
+      "description": "",
+      "technical":["sqlite","GetX"],
+      "location": ""
+    }
+  ],
+  "skills": [
+    "",
+    "",
+    ""
+  ],
+  "evaluate": [
+    "学习能力强，能快速接纳新的技术",
+    "看过多个开源项目和插件源码，热爱开源，写博客，持续学习分享，",
+    "组件化思想"
+  ]
+}
