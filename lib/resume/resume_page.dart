@@ -58,7 +58,9 @@ class _ResumePageState extends State<ResumePage> {
             child: RepaintBoundary(
               key: _globalKey,
               child: Container(color: Colors.blue,
-                child: Text("生活不易，我想叹气"),
+                child:  Center(child: Text("生活不易，我想叹气")),
+                width: double.infinity,
+                height: double.infinity,
               ),
             ),
           ),
