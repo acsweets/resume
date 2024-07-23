@@ -113,7 +113,7 @@ class _ResumePageState extends State<ResumePage> {
   Future<void> captureAndSavePng(dynamic _) async {
     try {
       // 等待一帧绘制完成
-      await Future.delayed(Duration(milliseconds: 20));
+      await Future.delayed(const Duration(milliseconds: 20));
       RenderRepaintBoundary boundary = _globalKey.currentContext!.findRenderObject() as RenderRepaintBoundary;
       ui.Image image = await boundary.toImage(pixelRatio: 3.0);
       typed.ByteData? byteData = await image.toByteData(format: ui.ImageByteFormat.png);
