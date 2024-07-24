@@ -69,6 +69,26 @@ class S {
       args: [],
     );
   }
+
+  /// `info`
+  String get info {
+    return Intl.message(
+      'info',
+      name: 'info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `education`
+  String get education {
+    return Intl.message(
+      'education',
+      name: 'education',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

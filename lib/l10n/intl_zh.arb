@@ -1,4 +1,7 @@
 {
   "title": "主页",
-  "hello": "你好"
+  "hello": "你好",
+  "info": "基本信息",
+  "education":"教育经历"
+
 }

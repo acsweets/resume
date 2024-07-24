@@ -15,9 +15,12 @@ import 'package:pdf/widgets.dart' as pw;
 import 'dart:io';
 import 'package:flutter/services.dart';
 import 'dart:ui' as ui;
+import '../generated/l10n.dart';
 import '../model/resume.dart';
 import '../widgets/tag.dart';
 import 'package:resume/model/load.dart';
+
+import '../widgets/toggle_button.dart';
 
 class ResumePage extends StatefulWidget {
   const ResumePage({super.key});
@@ -52,6 +55,7 @@ class _ResumePageState extends State<ResumePage> {
           appBar: AppBar(
             backgroundColor: Colors.white,
             actions: [
+              const LanguageToggleButton(),
               TextButton(
                   onPressed: () {
                     compute(captureAndSavePng, null);
@@ -139,10 +143,11 @@ class _ResumePageState extends State<ResumePage> {
     }
   }
 
+//S.of(context).title, "${Load.resumeData?.info.name}",
   Widget ItemResume() {
     return Container(
       child: Text(
-        "${Load.resumeData?.info.name}",
+        "${S.of(context).title}",
         style: TextStyle(color: Colors.green, fontSize: 16),
       ),
     );
@@ -150,9 +155,7 @@ class _ResumePageState extends State<ResumePage> {
 
   Widget itemInfo(InfoBean info) {
     return Column(
-      children: [
-
-      ],
+      children: [],
     );
   }
 }
