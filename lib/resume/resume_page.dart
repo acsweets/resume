@@ -15,7 +15,9 @@ import 'package:pdf/widgets.dart' as pw;
 import 'dart:io';
 import 'package:flutter/services.dart';
 import 'dart:ui' as ui;
+import '../model/resume.dart';
 import '../widgets/tag.dart';
+import 'package:resume/model/load.dart';
 
 class ResumePage extends StatefulWidget {
   const ResumePage({super.key});
@@ -36,44 +38,57 @@ class _ResumePageState extends State<ResumePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        actions: [
-          TextButton(
-              onPressed: () {
-                compute(captureAndSavePng, null);
-              },
-              child: Text("导出PDF"))
-        ],
-      ),
-      body: Row(
-        children: [
-          Flexible(
-            flex: 2,
-            child: Container(color: Colors.yellow),
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        // if (constraints.maxWidth < 600) {
+        //   // return MobileLayout();
+        // } else if (constraints.maxWidth < 1200) {
+        //   // return TabletLayout();
+        // } else {
+        //   // return DesktopLayout();
+        // }
+
+        return Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.white,
+            actions: [
+              TextButton(
+                  onPressed: () {
+                    compute(captureAndSavePng, null);
+                  },
+                  child: Text("导出PDF"))
+            ],
           ),
-          Flexible(
-            flex: 3,
-            child: RepaintBoundary(
-              key: _globalKey,
-              child: Container(color: Colors.blue,
-                child:  Center(child: Text("生活不易，我想叹气")),
-                width: double.infinity,
-                height: double.infinity,
+          body: Row(
+            children: [
+              Flexible(
+                flex: 2,
+                child: Container(color: Colors.yellow),
               ),
-            ),
+              Flexible(
+                flex: 3,
+                child: RepaintBoundary(
+                  key: _globalKey,
+                  child: Container(
+                    color: Colors.blue,
+                    child: ItemResume(),
+                    width: double.infinity,
+                    height: double.infinity,
+                  ),
+                ),
+              ),
+              Flexible(
+                flex: 1,
+                child: Container(color: Colors.green),
+              ),
+              Flexible(
+                flex: 2,
+                child: Container(color: Colors.yellow),
+              ),
+            ],
           ),
-          Flexible(
-            flex: 1,
-            child: Container(color: Colors.green),
-          ),
-          Flexible(
-            flex: 2,
-            child: Container(color: Colors.yellow),
-          ),
-        ],
-      ),
+        );
+      },
     );
   }
 
@@ -124,11 +139,20 @@ class _ResumePageState extends State<ResumePage> {
     }
   }
 
-  Future<void> loadJson() async {
-    final String response = await rootBundle.loadString('assets/data.json');
-    final Map<String, dynamic> jsonMap = json.decode(response);
-    setState(() {
-      // data = jsonMap;
-    });
+  Widget ItemResume() {
+    return Container(
+      child: Text(
+        "${Load.resumeData?.info.name}",
+        style: TextStyle(color: Colors.green, fontSize: 16),
+      ),
+    );
+  }
+
+  Widget itemInfo(InfoBean info) {
+    return Column(
+      children: [
+
+      ],
+    );
   }
 }
