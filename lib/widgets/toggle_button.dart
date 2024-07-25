@@ -17,7 +17,7 @@ class LanguageToggleButton extends StatelessWidget {
       onPressed: () {
         languageInherited.changeLanguage(isEnglish ? const Locale('zh', '') : const Locale('en', ''));
       },
-      child: Text(isEnglish ? '切换到中文' : 'Switch to English'),
+      child: Text(isEnglish ? '中文' : ' English'),
     );
   }
 }

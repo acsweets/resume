@@ -32,6 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "evaluate": MessageLookupByLibrary.simpleMessage("自我评价"),
         "expect": MessageLookupByLibrary.simpleMessage("求职意向"),
         "experience": MessageLookupByLibrary.simpleMessage("工作经历"),
+        "generatePDF": MessageLookupByLibrary.simpleMessage("导出PDF"),
         "hello": MessageLookupByLibrary.simpleMessage("你好"),
         "info": MessageLookupByLibrary.simpleMessage("基本信息"),
         "location": MessageLookupByLibrary.simpleMessage("位置"),
@@ -39,7 +40,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "phoneNumber": MessageLookupByLibrary.simpleMessage("电话号码"),
         "project": MessageLookupByLibrary.simpleMessage("项目经历"),
         "schoolName": MessageLookupByLibrary.simpleMessage("学校"),
-        "skills": MessageLookupByLibrary.simpleMessage("个人技能"),
+        "skills": MessageLookupByLibrary.simpleMessage("专业技能"),
+        "slogan": MessageLookupByLibrary.simpleMessage("种一棵树最好的时间是十年前,其次是现在。"),
+        "slogan1": MessageLookupByLibrary.simpleMessage(
+            "我深信智慧的火焰是唯一能够照亮困境的光芒，唯有这样的能量源泉,能够在时间的流逝中滋养自我，而不被消耗殆尽。"),
+        "slogan2": MessageLookupByLibrary.simpleMessage(
+            "是金子就让自己发光！不是金子把自己伪装成金子发光！总之先发光"),
         "startDate": MessageLookupByLibrary.simpleMessage("开始时间"),
         "title": MessageLookupByLibrary.simpleMessage("主页")
       };

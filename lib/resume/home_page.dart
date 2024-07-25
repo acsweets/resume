@@ -17,10 +17,6 @@ import 'dart:io';
 import 'package:flutter/services.dart';
 import 'dart:ui' as ui;
 import '../generated/l10n.dart';
-import '../model/resume.dart';
-import '../widgets/tag.dart';
-import 'package:resume/model/load.dart';
-
 import '../widgets/toggle_button.dart';
 
 final GlobalKey pdfKey = GlobalKey();
@@ -34,6 +30,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   Widget mainWidget = RepaintBoundary(key: pdfKey, child: const ResumePage());
+  Color homeBgColor = const Color(0xfff0f1f3);
+  late Widget sloganWidget;
 
   @override
   Widget build(BuildContext context) {
@@ -41,13 +39,14 @@ class _HomePageState extends State<HomePage> {
       builder: (BuildContext context, BoxConstraints constraints) {
         Widget home;
         if (constraints.maxWidth < 600) {
+          sloganWidget = Text(S.of(context).slogan, style: TextStyle(color: Theme.of(context).primaryColor));
           home = mainWidget;
         } else if (constraints.maxWidth < 1200) {
           home = Row(
             children: [
               Expanded(
                   child: Container(
-                color: Colors.grey,
+                color: homeBgColor,
               )),
               SizedBox(
                 width: 600,
@@ -55,16 +54,19 @@ class _HomePageState extends State<HomePage> {
               ),
               Expanded(
                   child: Container(
-                color: Colors.grey,
+                color: homeBgColor,
               )),
             ],
           );
+          sloganWidget = Text(S.of(context).slogan1, style: TextStyle(color: Theme.of(context).primaryColor));
         } else {
+          sloganWidget = Text(S.of(context).slogan2, style: TextStyle(color: Theme.of(context).primaryColor));
+
           home = Row(
             children: [
               Flexible(
                 flex: 2,
-                child: Container(color: Colors.grey),
+                child: Container(color: homeBgColor),
               ),
               Flexible(
                 flex: 3,
@@ -76,24 +78,41 @@ class _HomePageState extends State<HomePage> {
               ),
               Flexible(
                 flex: 2,
-                child: Container(color: Colors.grey),
+                child: Container(color: homeBgColor),
               ),
             ],
           );
         }
 
         return Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.white,
-            actions: [
-              const LanguageToggleButton(),
-              TextButton(
-                  onPressed: () {
-                    compute(captureAndSavePng, null);
-                  },
-                  child: Text("导出PDF"))
-            ],
+          appBar: PreferredSize(
+            preferredSize: const Size.fromHeight(kToolbarHeight),
+            child: Row(
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(top: 5.0, left: 5.0, bottom: 5.0, right: 15),
+                  child: CircleAvatar(
+                    radius: 25,
+                    backgroundImage: AssetImage('assets/images/avatar.png'),
+                  ),
+                ),
+                Expanded(child: sloganWidget),
+                const LanguageToggleButton(),
+                const SizedBox(
+                  width: 5,
+                ),
+                ElevatedButton(
+                    onPressed: () {
+                      compute(captureAndSavePng, null);
+                    },
+                    child: Text(
+                      S.of(context).generatePDF,
+                      style: const TextStyle(fontSize: 14),
+                    )),
+              ],
+            ),
           ),
+
           body: home,
         );
       },
@@ -145,15 +164,5 @@ class _HomePageState extends State<HomePage> {
     } catch (e) {
       print(e);
     }
-  }
-
-//S.of(context).title, "${Load.resumeData?.info.name}",
-  Widget ItemResume() {
-    return Container(
-      child: Text(
-        "${S.of(context).title}",
-        style: TextStyle(color: Colors.green, fontSize: 16),
-      ),
-    );
   }
 }

@@ -32,6 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "evaluate": MessageLookupByLibrary.simpleMessage("evaluate"),
         "expect": MessageLookupByLibrary.simpleMessage("expect"),
         "experience": MessageLookupByLibrary.simpleMessage("experience"),
+        "generatePDF": MessageLookupByLibrary.simpleMessage("Generate PDF"),
         "hello": MessageLookupByLibrary.simpleMessage("hello"),
         "info": MessageLookupByLibrary.simpleMessage("info"),
         "location": MessageLookupByLibrary.simpleMessage("location"),
@@ -40,6 +41,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "project": MessageLookupByLibrary.simpleMessage("project"),
         "schoolName": MessageLookupByLibrary.simpleMessage("schoolName"),
         "skills": MessageLookupByLibrary.simpleMessage("skills"),
+        "slogan": MessageLookupByLibrary.simpleMessage(
+            "The best time to plant a tree is ten years ago ,The second best time is now."),
+        "slogan1": MessageLookupByLibrary.simpleMessage(
+            "I firmly believe that the flame of wisdom is the only light that can illuminate difficult situations, and only such a source of energy can nourish oneself over time without being exhausted."),
+        "slogan2": MessageLookupByLibrary.simpleMessage(
+            "If you are gold, let yourself shine! If you are not gold, disguise yourself as gold and let yourself shine! In short, shine first"),
         "startDate": MessageLookupByLibrary.simpleMessage("startDate"),
         "title": MessageLookupByLibrary.simpleMessage("home")
       };

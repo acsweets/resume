@@ -17,7 +17,7 @@ class LanguageProvider extends StatefulWidget {
 }
 
 class _LanguageProviderState extends State<LanguageProvider> {
-  Locale _locale = const Locale('en', '');
+  Locale _locale = const Locale('zh', '');
 
   void changeLanguage(Locale newLocale) {
     setState(() {

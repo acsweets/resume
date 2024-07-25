@@ -249,6 +249,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Generate PDF`
+  String get generatePDF {
+    return Intl.message(
+      'Generate PDF',
+      name: 'generatePDF',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The best time to plant a tree is ten years ago ,The second best time is now.`
+  String get slogan {
+    return Intl.message(
+      'The best time to plant a tree is ten years ago ,The second best time is now.',
+      name: 'slogan',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `I firmly believe that the flame of wisdom is the only light that can illuminate difficult situations, and only such a source of energy can nourish oneself over time without being exhausted.`
+  String get slogan1 {
+    return Intl.message(
+      'I firmly believe that the flame of wisdom is the only light that can illuminate difficult situations, and only such a source of energy can nourish oneself over time without being exhausted.',
+      name: 'slogan1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `If you are gold, let yourself shine! If you are not gold, disguise yourself as gold and let yourself shine! In short, shine first`
+  String get slogan2 {
+    return Intl.message(
+      'If you are gold, let yourself shine! If you are not gold, disguise yourself as gold and let yourself shine! In short, shine first',
+      name: 'slogan2',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
