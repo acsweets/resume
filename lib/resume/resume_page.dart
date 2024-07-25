@@ -18,20 +18,24 @@ class ResumePage extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(top: 20),
       color: Colors.white,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          itemTag(S.of(context).info),
-          itemInfo(resume.info, context),
-          itemTag(S.of(context).skills),
-          itemEntry(resume.skills),
-          itemTag(S.of(context).experience),
-          itemTag(S.of(context).project),
-          itemTag(S.of(context).education),
-          ItemEducation(resume.education),
-          itemTag(S.of(context).evaluate),
-          itemEntry(resume.evaluate)
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            itemTag(S.of(context).info),
+            itemInfo(resume.info, context),
+            itemTag(S.of(context).skills),
+            itemEntry(resume.skills),
+            itemTag(S.of(context).experience),
+            itemEducation(resume.education),
+            itemTag(S.of(context).project),
+            itemEducation(resume.education),
+            itemTag(S.of(context).education),
+            itemEducation(resume.education),
+            itemTag(S.of(context).evaluate),
+            itemEntry(resume.evaluate)
+          ],
+        ),
       ),
     );
   }
@@ -114,24 +118,29 @@ class ResumePage extends StatelessWidget {
     );
   }
 
-  Widget ItemEducation(List<EducationBean> educations) {
-    return ListView.builder(
-      itemCount: educations.length,
-      itemBuilder: (_, i) {
-        return Column(
-          children: [
-            Row(
-              children: [
-                Text(educations[i].schoolName)
-              ],
-            ),
-            Text("专业"),
-            Text("课程"),
-          ],
-        );
-      },
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
+  Widget itemEducation(List<EducationBean> educations) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+      child: ListView.builder(
+        itemCount: educations.length,
+        itemBuilder: (_, i) {
+          return Column(
+            children: [
+              Row(
+                children: [
+                  Expanded(child: Text(educations[i].schoolName)),
+                  Spacer(),
+                  Expanded(child: Text("${educations[i].startDate}-${educations[i].endDate}"))
+                ],
+              ),
+              // Text("专业"),
+              // Text("课程"),
+            ],
+          );
+        },
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+      ),
     );
   }
 }
