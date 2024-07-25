@@ -22,9 +22,25 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "age": MessageLookupByLibrary.simpleMessage("age"),
+        "course": MessageLookupByLibrary.simpleMessage("course"),
+        "degree": MessageLookupByLibrary.simpleMessage("degree"),
+        "discipline": MessageLookupByLibrary.simpleMessage("discipline"),
         "education": MessageLookupByLibrary.simpleMessage("education"),
+        "email": MessageLookupByLibrary.simpleMessage("email"),
+        "endDate": MessageLookupByLibrary.simpleMessage("endDate"),
+        "evaluate": MessageLookupByLibrary.simpleMessage("evaluate"),
+        "expect": MessageLookupByLibrary.simpleMessage("expect"),
+        "experience": MessageLookupByLibrary.simpleMessage("experience"),
         "hello": MessageLookupByLibrary.simpleMessage("hello"),
         "info": MessageLookupByLibrary.simpleMessage("info"),
+        "location": MessageLookupByLibrary.simpleMessage("location"),
+        "name": MessageLookupByLibrary.simpleMessage("name"),
+        "phoneNumber": MessageLookupByLibrary.simpleMessage("phoneNumber"),
+        "project": MessageLookupByLibrary.simpleMessage("project"),
+        "schoolName": MessageLookupByLibrary.simpleMessage("schoolName"),
+        "skills": MessageLookupByLibrary.simpleMessage("skills"),
+        "startDate": MessageLookupByLibrary.simpleMessage("startDate"),
         "title": MessageLookupByLibrary.simpleMessage("home")
       };
 }

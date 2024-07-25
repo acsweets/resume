@@ -1,18 +1,17 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:resume/resume/resume_page.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import '../generated/l10n.dart';
 import '../local/language.dart';
+import 'home_page.dart';
 
 /// Author:      星星
 /// CreateTime:  2024/7/18
 /// Contact Me:  1395723441@qq.com
 
-class MyResume extends StatelessWidget {
-  const MyResume({super.key});
+class MyWeb extends StatelessWidget {
+  const MyWeb({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +34,7 @@ class MyResume extends StatelessWidget {
       home: ScreenUtilInit(
           designSize: const Size(1920, 1080),
           builder: (_, child) {
-            return const ResumePage();
+            return const HomePage();
           }),
     );
   }

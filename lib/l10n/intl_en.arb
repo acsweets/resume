@@ -2,5 +2,21 @@
   "title": "home",
   "hello": "hello",
   "info": "info",
-  "education":"education"
+  "education":"education",
+  "schoolName": "schoolName",
+  "startDate": "startDate",
+  "endDate": "endDate",
+  "location": "location",
+  "discipline": "discipline",
+  "course": "course",
+  "evaluate":"evaluate",
+  "skills": "skills",
+  "project": "project",
+  "experience": "experience",
+  "name": "name",
+  "age":"age",
+  "email": "email",
+  "phoneNumber": "phoneNumber",
+  "degree": "degree",
+  "expect": "expect"
 }

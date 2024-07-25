@@ -120,7 +120,7 @@ class ExperienceBean {
 /// course : []
 
 class EducationBean {
-  String name;
+  String schoolName;
   String startDate;
   String endDate;
   String location;
@@ -128,7 +128,7 @@ class EducationBean {
   List<String> course;
 
   EducationBean(
-      {required this.name,
+      {required this.schoolName,
       required this.startDate,
       required this.endDate,
       required this.location,
@@ -137,7 +137,7 @@ class EducationBean {
 
   factory EducationBean.fromMap(Map<String, dynamic> map) {
     return EducationBean(
-      name: map['name'],
+      schoolName: map['schoolName'],
       startDate: map['startDate'],
       endDate: map['endDate'],
       location: map['location'],
@@ -147,7 +147,7 @@ class EducationBean {
   }
 
   Map toJson() => {
-        "name": name,
+        "schoolName": schoolName,
         "startDate": startDate,
         "endDate": endDate,
         "location": location,

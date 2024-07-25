@@ -22,9 +22,25 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "age": MessageLookupByLibrary.simpleMessage("年龄"),
+        "course": MessageLookupByLibrary.simpleMessage("课程"),
+        "degree": MessageLookupByLibrary.simpleMessage("学历"),
+        "discipline": MessageLookupByLibrary.simpleMessage("专业"),
         "education": MessageLookupByLibrary.simpleMessage("教育经历"),
+        "email": MessageLookupByLibrary.simpleMessage("邮箱"),
+        "endDate": MessageLookupByLibrary.simpleMessage("截止时间"),
+        "evaluate": MessageLookupByLibrary.simpleMessage("自我评价"),
+        "expect": MessageLookupByLibrary.simpleMessage("求职意向"),
+        "experience": MessageLookupByLibrary.simpleMessage("工作经历"),
         "hello": MessageLookupByLibrary.simpleMessage("你好"),
         "info": MessageLookupByLibrary.simpleMessage("基本信息"),
+        "location": MessageLookupByLibrary.simpleMessage("位置"),
+        "name": MessageLookupByLibrary.simpleMessage("名字"),
+        "phoneNumber": MessageLookupByLibrary.simpleMessage("电话号码"),
+        "project": MessageLookupByLibrary.simpleMessage("项目经历"),
+        "schoolName": MessageLookupByLibrary.simpleMessage("学校"),
+        "skills": MessageLookupByLibrary.simpleMessage("个人技能"),
+        "startDate": MessageLookupByLibrary.simpleMessage("开始时间"),
         "title": MessageLookupByLibrary.simpleMessage("主页")
       };
 }

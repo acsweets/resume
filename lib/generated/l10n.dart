@@ -89,6 +89,166 @@ class S {
       args: [],
     );
   }
+
+  /// `schoolName`
+  String get schoolName {
+    return Intl.message(
+      'schoolName',
+      name: 'schoolName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `startDate`
+  String get startDate {
+    return Intl.message(
+      'startDate',
+      name: 'startDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `endDate`
+  String get endDate {
+    return Intl.message(
+      'endDate',
+      name: 'endDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `location`
+  String get location {
+    return Intl.message(
+      'location',
+      name: 'location',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `discipline`
+  String get discipline {
+    return Intl.message(
+      'discipline',
+      name: 'discipline',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `course`
+  String get course {
+    return Intl.message(
+      'course',
+      name: 'course',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `evaluate`
+  String get evaluate {
+    return Intl.message(
+      'evaluate',
+      name: 'evaluate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `skills`
+  String get skills {
+    return Intl.message(
+      'skills',
+      name: 'skills',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `project`
+  String get project {
+    return Intl.message(
+      'project',
+      name: 'project',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `experience`
+  String get experience {
+    return Intl.message(
+      'experience',
+      name: 'experience',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `name`
+  String get name {
+    return Intl.message(
+      'name',
+      name: 'name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `age`
+  String get age {
+    return Intl.message(
+      'age',
+      name: 'age',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `email`
+  String get email {
+    return Intl.message(
+      'email',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `phoneNumber`
+  String get phoneNumber {
+    return Intl.message(
+      'phoneNumber',
+      name: 'phoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `degree`
+  String get degree {
+    return Intl.message(
+      'degree',
+      name: 'degree',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `expect`
+  String get expect {
+    return Intl.message(
+      'expect',
+      name: 'expect',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
