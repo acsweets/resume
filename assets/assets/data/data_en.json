@@ -1,0 +1,129 @@
+{
+  "info": {
+    "name": "Liu Xiaocao",
+    "age": 26,
+    "email": "jurelxc@163.com",
+    "phoneNumber": "18656419889",
+    "degree": "Bachelor",
+    "expect": "Flutter Development"
+  },
+  "education": [
+    {
+      "schoolName": "Hefei University",
+      "startDate": "2020.9.1",
+      "endDate": "2022.7.1",
+      "location": "Hefei",
+      "discipline": "Network Engineering",
+      "course": [
+        "Data Structures",
+        "C Language",
+        "Computer Networks",
+        "Python Development",
+        "Principles of Computer Organization",
+        "Java"
+      ]
+    },
+    {
+      "schoolName": "Anhui Vocational and Technical College of Industry and Economics",
+      "startDate": "2017.9.1",
+      "endDate": "2020.7.1",
+      "location": "Hefei",
+      "discipline": "Software Engineering",
+      "course": [
+        "Java Development",
+        "Android Development",
+        "SQL Database",
+        "HTML CSS JavaScript",
+        "C# Development"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "name": "Xiaoyuanbang Information Technology Co., Ltd.",
+      "startDate": "July 2019",
+      "endDate": "July 2020",
+      "responsibilities": [
+        "Responsible for maintaining Android projects and fixing bugs in the projects",
+        "Responsible for developing new modules, mainly focusing on the student information module",
+        "Participated in requirement discussions and design; responsible for packaging and launching on different channels"
+      ],
+      "post": "Android Developer"
+    },
+    {
+      "name": "Beijing Weishiting Cultural Media Co., Ltd.",
+      "startDate": "March 2022",
+      "endDate": "Present",
+      "responsibilities": [
+        "Responsible for maintaining Flutter projects and maintaining Android plugins",
+        "Mentoring new employees, helping them get familiar with company culture and processes, and providing technical guidance",
+        "Exploring new technologies, trying different technical solutions for the company's specific business",
+        "Responsible for project refactoring, migrating to the Getx state management framework to make the project architecture clearer and more maintainable, and improving the development efficiency of new modules"
+      ],
+      "post": "Core Flutter Developer"
+    }
+  ],
+  "project": [
+    {
+      "name": "XPA Assistant",
+      "startDate": "May 2023",
+      "endDate": "Present",
+      "description": [
+        "Independently responsible for the Android development of the project, meeting the needs of e-commerce customers for automatic order placement and captcha forwarding",
+        "Based on the Provider state management framework, achieved the separation of page logic and UI, improving code maintainability",
+        "Provided support for the company's ERP project, implementing captcha forwarding service for automatic order placement by forwarding received SMS to the server. The server then completes the verification process.",
+        "Implemented two-way communication between Flutter and Android Native, realizing SMS captcha forwarding service to enhance automatic order placement efficiency. Used foreground service mechanism to continuously monitor incoming SMS and promptly forward captchas to the server.",
+        "Applied Socket long connections to monitor the operational status of the phone service in real-time, ensuring stability and reliability. Used Realm database to store forwarding logs, facilitating problem troubleshooting and data tracing."
+      ],
+      "technical": [
+        "sqlite",
+        "GetX"
+      ]
+    },
+    {
+      "name": "Wisdom of the Way",
+      "startDate": "March 2022",
+      "endDate": "Present",
+      "description": [
+        "Provided management and operational solutions for enterprises, including modules such as tasks, classes, projects, meetings, and live broadcasts, facilitating enterprise learning and talent management",
+        "Responsible for developing new modules for the application and packaging the application for different channels",
+        "Responsible for project refactoring to make the project more maintainable and improve development efficiency"
+      ],
+      "technical": [
+        "sqlite",
+        "GetX"
+      ]
+    },
+    {
+      "name": "Form Framework Development",
+      "startDate": "April 2024",
+      "endDate": "Present",
+      "description": [
+      "Met the company's form business reuse needs and collaborated with frontend colleagues to complete the rendering of mobile form interfaces based on the HTML provided by the frontend colleagues."],
+      "technical": [
+        "WebF",
+        "GetX"
+      ]
+    }
+  ],
+  "skills": [
+    "Proficient in Dart language and Flutter framework, with extensive experience in page development",
+    "Skilled in setting up and deploying Flutter projects and publishing applications on Android and iOS",
+    "Proficient in Xcode packaging, certificate configuration, and App Store release processes, familiar with submission review requirements",
+    "Deep understanding of Dart language features, including asynchronous programming (async/await, Future, Stream), mixins, and extension methods",
+    "Experienced with packages like http and dio for network requests, handling API calls, WebSocket communication, and data serialization and deserialization (JSON)",
+    "Proficient in Flutter routing, state management (Provider and GetX), layout, animation, and excellent third-party library usage",
+    "Familiar with Git for code and document management. Comfortable with basic usage of Linux operating system, including file management, software installation, and system configuration",
+    "Proficient in Java language and Android platform development",
+    "Expert in communicating with native code, skilled in calling and integrating Android native pages and methods, adept at maintaining and optimizing Android plugins",
+    "Familiar with Flutter's rendering principles and asynchronous programming model, capable of optimizing application performance and user experience",
+    "Passionate about sharing technology, contributed to well-known open-source projects such as flutter_unit"
+  ],
+  "evaluate": [
+    "Strong learning ability, able to quickly adopt new technologies, participated in the development of new framework technologies at the company",
+    "Passionate about technology, enjoys reading technical blogs and books to improve skills, has a habit of writing technical blogs",
+    "Has reviewed the source code of several open-source projects and plugins, continuously improving technical skills and problem-solving abilities",
+    "Good at communication, strong understanding ability, able to quickly understand and organize requirements during development",
+    "Strong sense of responsibility, responsible for own projects, continuously optimizing and refactoring"
+  ]
+}
