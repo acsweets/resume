@@ -49,21 +49,20 @@ class ProjectBean {
   String? name;
   String? startDate;
   String? endDate;
-  String? description;
+  List<String>? description;
   List<String>? technical;
-  String? location;
 
-  ProjectBean({this.name, this.startDate, this.endDate, this.description, this.technical, this.location});
+  ProjectBean({this.name, this.startDate, this.endDate, this.description, this.technical,});
 
   static ProjectBean fromMap(Map<String, dynamic> map) {
     ProjectBean projectBean = ProjectBean();
     projectBean.name = map['name'];
     projectBean.startDate = map['startDate'];
     projectBean.endDate = map['endDate'];
-    projectBean.description = map['description'];
+    projectBean.description =
+        map['description'] == null ? [] : (map['description'] as List).map((e) => e.toString()).toList();
     projectBean.technical =
         map['technical'] == null ? [] : (map['technical'] as List).map((e) => e.toString()).toList();
-    projectBean.location = map['location'];
     return projectBean;
   }
 
@@ -73,7 +72,6 @@ class ProjectBean {
         "endDate": endDate,
         "description": description,
         "technical": technical,
-        "location": location,
       };
 }
 

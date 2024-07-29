@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../generated/l10n.dart';
+import '../local/language.dart';
 import '../model/load.dart';
 import '../model/resume.dart';
 import '../widgets/tag.dart';
@@ -10,11 +11,13 @@ import '../widgets/tag.dart';
 /// Contact Me:  1395723441@qq.com
 
 class ResumePage extends StatelessWidget {
-  const ResumePage({super.key});
+  const ResumePage({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    Resume resume = Load.resumeData!;
+    var resume = LanguageInheritedWidget.of(context).resume;
     return Container(
       padding: const EdgeInsets.only(top: 20),
       color: Colors.white,

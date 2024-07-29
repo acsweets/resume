@@ -17,6 +17,9 @@ import 'dart:io';
 import 'package:flutter/services.dart';
 import 'dart:ui' as ui;
 import '../generated/l10n.dart';
+import '../local/language.dart';
+import '../model/load.dart';
+import '../model/resume.dart';
 import '../widgets/toggle_button.dart';
 
 final GlobalKey pdfKey = GlobalKey();
@@ -29,7 +32,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Widget mainWidget = RepaintBoundary(key: pdfKey, child: const ResumePage());
+
+
+  Widget mainWidget = RepaintBoundary(key: pdfKey, child:  ResumePage());
   Color homeBgColor = const Color(0xfff0f1f3);
   late Widget sloganWidget;
 

@@ -9,19 +9,30 @@ import 'package:resume/model/resume.dart';
 
 class Load {
   static final Load _instance = Load._();
-  static Resume? resumeData;
+  static Resume? resumeDataZh;
+  static Resume? resumeDataEn;
+
+  late final String responseZh;
+  late final String responseEn;
+  static late final Map<String, dynamic> jsonMapZh;
+  static late final Map<String, dynamic> jsonMapEn;
 
   static Load get instance => _instance;
 
   Load._();
 
   Future<void> init() async {
-    resumeData = await loadData();
+    responseZh = await rootBundle.loadString('assets/data/data_zh.json');
+    responseEn = await rootBundle.loadString('assets/data/data_en.json');
+    jsonMapZh = json.decode(responseZh);
+    jsonMapEn = json.decode(responseEn);
+    loadData();
+
   }
 
-  Future<Resume> loadData() async {
-    final String response = await rootBundle.loadString('assets/data/data.json');
-    final Map<String, dynamic> jsonMap = json.decode(response);
-    return Resume.fromMap(jsonMap);
-  }
+  void loadData() {
+      resumeDataZh=  Resume.fromMap(jsonMapZh);
+      resumeDataEn=  Resume.fromMap(jsonMapEn);
+
+    }
 }
