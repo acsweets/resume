@@ -34,7 +34,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
 
-  Widget mainWidget = RepaintBoundary(key: pdfKey, child:  ResumePage());
+  Widget mainWidget = RepaintBoundary(key: pdfKey, child:  const ResumePage());
   Color homeBgColor = const Color(0xfff0f1f3);
   late Widget sloganWidget;
 

@@ -47,6 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "slogan2": MessageLookupByLibrary.simpleMessage(
             "是金子就让自己发光！不是金子把自己伪装成金子发光！总之先发光"),
         "startDate": MessageLookupByLibrary.simpleMessage("开始时间"),
+        "technology": MessageLookupByLibrary.simpleMessage("技术栈"),
         "title": MessageLookupByLibrary.simpleMessage("主页")
       };
 }

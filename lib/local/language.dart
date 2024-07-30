@@ -1,10 +1,8 @@
+import 'package:flutter/material.dart';
+import '../model/resume.dart';
 /// Author:      星星
 /// CreateTime:  2024/7/24
 /// Contact Me:  1395723441@qq.com
-
-import 'package:flutter/material.dart';
-
-import '../model/resume.dart';
 
 class LanguageInheritedWidget extends InheritedWidget {
   final Locale locale;

@@ -28,7 +28,7 @@ class MyWeb extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: '衿璃',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white, primary: const Color(0xff8ec5ea)),
         useMaterial3: true,
       ),
       home: ScreenUtilInit(

@@ -48,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "slogan2": MessageLookupByLibrary.simpleMessage(
             "If you are gold, let yourself shine! If you are not gold, disguise yourself as gold and let yourself shine! In short, shine first"),
         "startDate": MessageLookupByLibrary.simpleMessage("startDate"),
+        "technology": MessageLookupByLibrary.simpleMessage("Technology"),
         "title": MessageLookupByLibrary.simpleMessage("home")
       };
 }

@@ -289,6 +289,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Technology`
+  String get technology {
+    return Intl.message(
+      'Technology',
+      name: 'technology',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
