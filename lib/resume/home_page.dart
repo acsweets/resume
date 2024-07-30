@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
               ),
               Flexible(
                 flex: 1,
-                child: Container(color: Colors.green),
+                child: _oneself(),
               ),
               Flexible(
                 flex: 2,
@@ -170,4 +170,23 @@ class _HomePageState extends State<HomePage> {
       print(e);
     }
   }
+  Widget _oneself() {
+    return Container(
+      margin: const EdgeInsets.only(top: 30, left: 10, right: 10),
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: Colors.white,
+      ),
+      child: const Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            children: [
+              Text("衿璃 衿璃 青青子衿，悠悠我心。锦鲤 锦鲤"),
+            ],
+          )
+        ],
+      ),
+    );}
 }
