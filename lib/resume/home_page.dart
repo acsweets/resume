@@ -74,12 +74,8 @@ class _HomePageState extends State<HomePage> {
                 child: Container(color: homeBgColor),
               ),
               Flexible(
-                flex: 3,
+                flex: 4,
                 child: mainWidget,
-              ),
-              Flexible(
-                flex: 1,
-                child: _oneself(),
               ),
               Flexible(
                 flex: 2,
