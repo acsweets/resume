@@ -14,10 +14,10 @@ jobs:
         # 使用 subosito/flutter-action@v1 Action 设置 Flutter 环境，并指定使用 stable 通道
 #        with:
 #          channel: 'stable'
-        with:
         # 方式1: 指定具体版本号
-        flutter-version: '3.22.0'
-
+        with:
+          flutter-version: '3.22.0'
+          cache: true
         # 方式2: 使用通道（注释掉上面的版本号使用这个）
         # channel: 'stable'
 
@@ -25,7 +25,7 @@ jobs:
         # flutter-version-file: 'pubspec.yaml'  # 从 pubspec.yaml 读取版本
 
         # 缓存 Flutter SDK 以提高构建速度
-        cache: true
+
 
           # 验证 Flutter 安装
       - name: Flutter Doctor
