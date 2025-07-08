@@ -12,8 +12,25 @@ jobs:
       - uses: actions/checkout@v2
       - uses: subosito/flutter-action@v1
         # 使用 subosito/flutter-action@v1 Action 设置 Flutter 环境，并指定使用 stable 通道
+#        with:
+#          channel: 'stable'
         with:
-          channel: 'stable'
+        # 方式1: 指定具体版本号
+        flutter-version: '3.22.0'
+
+        # 方式2: 使用通道（注释掉上面的版本号使用这个）
+        # channel: 'stable'
+
+        # 方式3: 使用版本范围（注释掉上面的配置使用这个）
+        # flutter-version-file: 'pubspec.yaml'  # 从 pubspec.yaml 读取版本
+
+        # 缓存 Flutter SDK 以提高构建速度
+        cache: true
+
+          # 验证 Flutter 安装
+      - name: Flutter Doctor
+        run: flutter doctor -v
+
       - run: flutter clean
       - run: flutter pub get
       - run: flutter build web --base-href "/resume/"
