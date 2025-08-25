@@ -11,6 +11,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pdf/pdf.dart';
 import 'package:resume/resume/resume_page.dart';
+import 'package:resume/resume/pdf_resume_page.dart';
 import 'package:universal_html/html.dart' as html;
 import 'package:pdf/widgets.dart' as pw;
 import 'dart:io';
@@ -23,6 +24,7 @@ import '../model/resume.dart';
 import '../widgets/toggle_button.dart';
 
 final GlobalKey pdfKey = GlobalKey();
+final GlobalKey screenKey = GlobalKey();
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -34,7 +36,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
 
-  Widget mainWidget = RepaintBoundary(key: pdfKey, child:  const ResumePage());
+  Widget mainWidget = RepaintBoundary(key: screenKey, child: const ResumePage());
   Color homeBgColor = const Color(0xfff0f1f3);
   late Widget sloganWidget;
 
@@ -103,9 +105,7 @@ class _HomePageState extends State<HomePage> {
                   width: 5,
                 ),
                 ElevatedButton(
-                    onPressed: () {
-                      compute(captureAndSavePng, null);
-                    },
+                    onPressed: _generatePDF,
                     child: Text(
                       S.of(context).generatePDF,
                       style: const TextStyle(fontSize: 14),
@@ -124,13 +124,17 @@ class _HomePageState extends State<HomePage> {
     final pdf = pw.Document();
     pdf.addPage(
       pw.Page(
+        pageFormat: PdfPageFormat.a4,
+        margin: pw.EdgeInsets.zero,
         build: (pw.Context context) {
           final pdfImage = pw.MemoryImage(pngBytes);
-          // return pw.Center(
-          //   child: pw.Text('Hello World'),
-          // );
-          return pw.Center(
-            child: pw.Image(pdfImage),
+          return pw.Container(
+            width: double.infinity,
+            height: double.infinity,
+            child: pw.Image(
+              pdfImage,
+              fit: pw.BoxFit.contain,
+            ),
           );
         },
       ),
@@ -153,17 +157,62 @@ class _HomePageState extends State<HomePage> {
     html.Url.revokeObjectUrl(url);
   }
 
-  Future<void> captureAndSavePng(dynamic _) async {
+  void _generatePDF() async {
     try {
-      // 等待一帧绘制完成
-      await Future.delayed(const Duration(milliseconds: 20));
-      RenderRepaintBoundary boundary = pdfKey.currentContext!.findRenderObject() as RenderRepaintBoundary;
-      ui.Image image = await boundary.toImage(pixelRatio: 3.0);
-      typed.ByteData? byteData = await image.toByteData(format: ui.ImageByteFormat.png);
-      typed.Uint8List pngBytes = byteData!.buffer.asUint8List();
-      createPDF(pngBytes);
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) => const Center(
+          child: CircularProgressIndicator(),
+        ),
+      );
+
+      await _createPdfWidget();
+      
+      if (mounted) Navigator.of(context).pop();
     } catch (e) {
-      print(e);
+      if (mounted) Navigator.of(context).pop();
+      print('PDF生成失败: $e');
+    }
+  }
+
+  Future<void> _createPdfWidget() async {
+    final overlay = Overlay.of(context);
+    late OverlayEntry overlayEntry;
+    
+    overlayEntry = OverlayEntry(
+      builder: (context) => Positioned(
+        left: -2000,
+        top: 0,
+        child: Material(
+          child: Container(
+            width: 794,
+            height: 1123,
+            child: RepaintBoundary(
+              key: pdfKey,
+              child: const PdfResumePage(),
+            ),
+          ),
+        ),
+      ),
+    );
+    
+    overlay.insert(overlayEntry);
+    
+    await Future.delayed(const Duration(milliseconds: 1000));
+    
+    try {
+      final boundary = pdfKey.currentContext?.findRenderObject() as RenderRepaintBoundary?;
+      if (boundary != null) {
+        final image = await boundary.toImage(pixelRatio: 2.0);
+        final byteData = await image.toByteData(format: ui.ImageByteFormat.png);
+        
+        if (byteData != null) {
+          await createPDF(byteData.buffer.asUint8List());
+        }
+      }
+    } finally {
+      overlayEntry.remove();
     }
   }
   Widget _oneself() {
